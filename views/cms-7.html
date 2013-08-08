@@ -1,0 +1,395 @@
+<html>
+<title>Noodlemaker v.1</title>
+<style type='text/css'>
+
+	@font-face {
+    font-family: 'unionbold';
+    src: url('type/union-bold-webfont.eot');
+    src: url('type/union-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/union-bold-webfont.woff') format('woff'),
+         url('type/union-bold-webfont.ttf') format('truetype'),
+         url('type/union-bold-webfont.svg#unionbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+	body {
+		margin: 0 0 0 0;
+		border: 3px solid rgba(0,0,0,1);
+		overflow: hidden;
+	}
+
+
+	form {	
+		margin: 0;
+		padding: 0;
+	}
+	
+button,
+input,
+input:focus,
+select,
+textarea { 
+    font-family: 'unionbold';
+	margin-bottom: 1px;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	padding: 5px 0px 0px 0px;
+	width:100%;
+	border: none;
+	color:rgba(0,0,0);
+	background-color: transparent;
+	font-size: 22px;
+	line-height: 25px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	outline:none;
+
+}
+}
+	.pr-area {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.pr {
+		border-bottom: 1px solid black;
+		position: relative;
+		height: 80px;
+		margin-top: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 734px;
+		padding-left: 10px; 
+		z-index: 2;
+		background-color: rgba(255,255,255,1)
+	}
+
+	.pr-item {
+		float: left;
+		display: table-cell;
+	}
+
+	.pr-txinput {
+		float: left;
+		padding-top: 22px;
+		border-bottom: 2px solid rgba(0,0,0,0.1);
+	}
+
+	.pr-space {
+	    font-family: 'unionbold';
+    	font-size: 22px;
+		float: left;
+		padding-top: 30px;
+		width: 30px;
+		text-align: center;
+	}
+
+	.pr-swatches {
+		cursor: pointer;
+		display: table-row;
+		width: 6px;
+		padding: 0px;
+		height: 6px;
+	}
+
+	.pr-tx {
+		cursor: pointer;
+		padding-top:30px;
+		width:90px;
+		color:rgba(0,0,0, 0.15);
+	}
+
+	.pr-tx:hover {
+		color:rgba(0,0,0, 1);
+	}
+
+	button:hover {
+		color:rgba(0,0,0, 1);
+	}
+
+	.pr-status {
+	    font-family: 'unionbold';
+	    text-align: center;
+	    color:rgba(0,0,0,1);
+	    font-size: 12px;
+	    padding-bottom: 10px;
+	    position: fixed;
+	    width: 100%;
+	    bottom: 0px;
+	}
+
+	.pr-linetype {
+		cursor: pointer;
+		width: 108px;
+		padding: 0px;
+		height: 16px;
+		background-position: 0px center;
+		opacity: 0.15;
+	}
+
+	.pr-dash {
+		background-image:url('lines/l-dash.png');
+	}
+
+	.pr-dash:hover {
+		opacity: 1;
+	}
+
+	.pr-wv {
+		background-image:url('lines/l-wave.png');
+	}
+
+	.pr-wv:hover {
+		opacity: 1;
+	}
+
+	.pr-dot {
+		background-image:url('lines/l-dot.png');
+	}
+
+	.pr-dot:hover {
+		opacity: 1;
+	}
+
+	a {color:rgba(0,0,0, 0.15); cursor:pointer; text-decoration: none;}
+	a:link    {color:rgba(0,0,0, 0.15);}
+	a:visited {color:rgba(0,0,0, 0.15);}
+	a:hover   {color:rgba(0,0,0, 1);}
+	a:active  {color:rgba(0,0,0, 1);}
+
+	.triangleBottomRight{
+     width:0;
+     height:15;
+     border-left:10px solid transparent;
+     border-bottom:10px solid white;
+     overflow: hidden;
+	}
+
+	.pr-swatch{
+		float: left;
+		width: 10px;
+		height: 25px;
+		padding-left: 13px;
+		background-color: rgba(0,0,0,0.065);
+	}
+
+	.riso-blue:hover {
+			background-color: rgba(26,94,171,1);
+		}
+
+	.riso-green:hover {
+			background-color: rgba(0,168,93,1);
+		}
+
+	.riso-fluopink:hover {
+			background-color: rgba(255,133,200,1);
+		}
+
+	.riso-black:hover {
+			background-color: rgba(0,0,0,1);
+		}
+
+	.riso-red:hover {
+			background-color: rgba(230,77,97,1);
+		}
+
+	.riso-gold:hover {
+			background-color: rgba(180,148,110,1);
+		}
+
+	.riso-yellow:hover {
+			background-color: rgba(254,227,0,1);
+		}
+
+	.dr-area {
+		width: 100%;
+		background-color: rgba(254,227,0,1);
+		overflow: hidden;
+	}
+
+	.dr-container {
+		z-index: -1;
+		position: absolute;
+		width: 200%;
+		height: 200%;
+		margin: -50%;
+		overflow: visible;
+ 		-webkit-transform-origin: center center ;
+	}
+
+	.dr-box {
+		display: block;
+		position: relative;
+		background-repeat: repeat-x;
+		background-position: 0px center;
+		overflow: hidden;
+	}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<body>
+
+<form id="layer">
+<div class="pr-area">
+	<div>
+	<div class="pr">
+		<div class="pr-item">
+					<div class="pr-txinput" style="width:208px;">
+		            <input type="text" maxlength="12" name="createdBy" id="createdBy"><br>
+					</div>
+		</div>
+		<div class="pr-space">,</div>
+		<div class="pr-item" style="padding-top:20px;">
+					<div class="pr-linetype pr-dot"></div>
+					<div class="pr-linetype pr-dash"></div>
+					<div class="pr-linetype pr-wv"></div>
+		            <input type="hidden" name="linetype" id="linetype">
+
+		</div>
+		<div class="pr-space">,</div>
+		<div class="pr-item" style="padding-top:16px;">
+				<div class="pr-swatches">
+					<div class="pr-swatch riso-yellow"><div class="triangleBottomRight"></div></div>
+					<div class="pr-swatch riso-fluopink"><div class="triangleBottomRight"></div></div>
+					<div class="pr-swatch riso-gold"><div class="triangleBottomRight"></div></div>
+					<div class="pr-swatch riso-green"><div class="triangleBottomRight"></div></div>
+				</div>
+				<div class="pr-swatches">
+					<div class="pr-swatch riso-red"><div class="triangleBottomRight"></div></div>
+					<div class="pr-swatch riso-blue"><div class="triangleBottomRight"></div></div>
+					<div class="pr-swatch riso-black"><div class="triangleBottomRight"></div></div>
+		            <input type="hidden" name="swatch" id="swatch">
+				</div>
+
+		</div>
+		<div class="pr-space">,</div>
+		<div class="pr-item">
+					<div class="pr-txinput number" style="width:46px;">
+		            <div class="pr-space" style="width: 46px; position:absolute; padding-top:4px; font-size: 22px; text-align: right; pointer-events:none;">&deg;</div>
+		            <input type="text" maxlength="3" name="angle" id="angle">
+					</div>
+		</div>
+		<div class="pr-space">,</div>
+		<div class="pr-item">
+					<div class="pr-txinput number" style="width:40px;">
+		            <div class="pr-space" style="position:absolute; padding-top:10px; font-size: 18px; text-align: left; pointer-events:none;">&times;</div>
+		            <input type="text" maxlength="2" name="times" id="times" style="text-align: right"><br>
+					</div>
+		</div>
+		<div class="pr-item">
+					<div class="pr-space" style="padding-left: 2px; text-align:left; width:18px;">.</div>
+					<div class="pr-space pr-tx confirm"><a href="javascript:" onclick="document.getElementById('layer').submit(); return false;">Confirm.</a></div>
+		</div>
+	</div>
+		<div class="pr-status">
+					<div>You have <%= 5 - layers.length%6 %> layers to go</div>
+					<div style="color:rgba(0,0,0, 0.20);">View archive</div>
+		</div>
+	</div>
+</div>
+</form>
+
+		<div class="dr-area">
+		        <% layers.slice(layers.length - layers.length%6).forEach(function(layer) { %>
+				<div class="dr-container" style="-webkit-transform: rotate(<%= layer.angle %>deg);">
+					    	<% for (j = 1; j <= layer.times; j++) { %>
+					    		<div class="dr-box" style="	height: <%= 100 / layer.times %>%;
+					    									background-image: url('data:image/svg+xml;charset=utf-8,<%= layer.linetype %><%= layer.swatch %>');"></div>
+						   	<% } %>
+				</div>
+				<% }); %>
+		</div>
+
+<script>
+
+		$(".confirm").on("click", function() { 
+		    $(".confirm").css("color", "rgba(0,0,0,1)");
+		 }); 
+
+		$(".pr-dot").on("click", function() {
+		    $(this).css("opacity", "1");
+		    $(".pr-dash").css("opacity", "0.15");
+		    $(".pr-wv").css("opacity", "0.15");
+		    $('input[id="linetype"]').val("<%= dotted %>");
+		}); 
+
+		$(".pr-dash").on("click", function() {
+		    $(this).css("opacity", "1");
+   		    $(".pr-dot").css("opacity", "0.15");
+		    $(".pr-wv").css("opacity", "0.15");
+		    $('input[id="linetype"]').val("<%= dashed %>");
+		}); 
+
+		$(".pr-wv").on("click", function() {
+		    $(this).css("opacity", "1");
+		    $(".pr-dash").css("opacity", "0.15");
+		    $(".pr-dot").css("opacity", "0.15");
+		    $('input[id="linetype"]').val("<%= waved %>");
+		}); 
+
+		$(".pr-swatch").on("click", function() { 
+		    $(".pr-swatch").css("background", "rgba(0,0,0,0.065)");
+		}); 
+
+		$(".riso-blue").on("click", function() { 
+		    $(this).css("background", "rgba(26,94,171,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%2826%2C94%2C171%2C1%29%22%2F%3E%3C%2Fsvg%3E");
+		}); 
+
+		$(".riso-green").on("click", function() {
+		    $(this).css("background", "rgba(0,168,93,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%280%2C168%2C93%2C1%29%22%2F%3E%3C%2Fsvg%3E");
+		}); 
+
+		$(".riso-fluopink").on("click", function() {
+		    $(this).css("background", "rgba(255,133,200,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%28255%2C133%2C200%2C1%29%22%2F%3E%3C%2Fsvg%3E");
+		}); 
+
+		$(".riso-black").on("click", function() {
+		    $(this).css("background", "rgba(0,0,0,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%280%2C0%2C0%2C1%29%22%2F%3E%3C%2Fsvg%3E");
+		}); 
+
+		$(".riso-red").on("click", function() {
+		    $(this).css("background", "rgba(230,77,97,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%28230%2C77%2C97%2C1%29%22%2F%3E%3C%2Fsvg%3E");
+		}); 
+
+		$(".riso-gold").on("click", function() {
+		    $(this).css("background", "rgba(180,148,110,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%28180%2C148%2C110%2C1%29%22%2F%3E%3C%2Fsvg%3E");
+		}); 
+
+		$(".riso-yellow").on("click", function() {
+		    $(this).css("background", "rgba(254,227,0,1)");
+		    $('input[id="swatch"]').val("%20fill%3D%22rgba%28254%2C227%2C0%2C1%29%22%2F%3E%3C%2Fsvg%3E");		    
+		}); 
+
+		$('.number').keypress(function(e) {
+		    var a = [];
+		    var k = e.which;
+		    
+		    for (i = 48; i < 58; i++)
+		        a.push(i);
+		    
+		    if (!(a.indexOf(k)>=0))
+		        e.preventDefault();
+		    
+		    $('this').text('KeyCode: '+k);
+		});
+
+</script>
+</body>
+</html>
