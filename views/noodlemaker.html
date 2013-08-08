@@ -3,27 +3,52 @@
 <style type='text/css'>
 
 	@font-face {
-    font-family: 'unionbold';
-    src: url('type/union-bold-webfont.eot');
-    src: url('type/union-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('type/union-bold-webfont.woff') format('woff'),
-         url('type/union-bold-webfont.ttf') format('truetype'),
-         url('type/union-bold-webfont.svg#unionbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	    font-family: 'unionbold';
+	    src: 	url('type/union-bold-webfont.eot');
+	    src: 	url('type/union-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	         	url('type/union-bold-webfont.woff') format('woff'),
+	        	url('type/union-bold-webfont.ttf') format('truetype'),
+	         	url('type/union-bold-webfont.svg#unionbold') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
 
 }
 
+	* {
+		font-family: 'unionbold';
+	}
+
 	body {
-		margin: 0 0 0 0;
-		border: 3px solid rgba(0,0,0,1);
+		margin:	0 0 0 0;
+		border:	3px solid rgba(0,0,0,1);
 		overflow: hidden;
 	}
 
-
 	form {	
-		margin: 0;
+		margin:	0;
 		padding: 0;
+	}
+
+	label.error {
+		display: inline-block;
+		font-size: 10px;
+		width: 100px;
+	}
+
+	::-webkit-input-placeholder {
+	   color: rgba(0,0,0, 0.15);
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: rgba(0,0,0, 0.15);  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(0,0,0, 0.15);  
+	}
+
+	:-ms-input-placeholder {  
+	   color: rgba(0,0,0, 0.15);  
 	}
 	
 button,
@@ -31,29 +56,28 @@ input,
 input:focus,
 select,
 textarea { 
-    font-family: 'unionbold';
-	margin-bottom: 1px;
-	letter-spacing: normal;
-	word-spacing: normal;
-	text-transform: none;
-	text-indent: 0px;
-	text-shadow: none;
-	display: inline-block;
-	padding: 5px 0px 0px 0px;
-	width:100%;
-	border: none;
-	color:rgba(0,0,0);
-	background-color: transparent;
-	font-size: 22px;
-	line-height: 25px;
-	-webkit-font-smoothing: subpixel-antialiased;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	outline:none;
+		margin-bottom: 1px;
+		letter-spacing: normal;
+		word-spacing: normal;
+		text-transform: none;
+		text-indent: 0px;
+		text-shadow: none;
+		display: inline-block;
+		padding: 5px 0px 0px 0px;
+		width: 100%;
+		border: none;
+		color: rgba(0,0,0);
+		background-color: transparent;
+		font-size: 22px;
+		line-height: 25px;
+		-webkit-font-smoothing: subpixel-antialiased;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		outline: none;
 
-}
-}
+	}
+
 	.pr-area {
 		position: absolute;
 		width: 100%;
@@ -63,12 +87,12 @@ textarea {
 	.pr {
 		border-bottom: 1px solid black;
 		position: relative;
-		height: 80px;
+		height:	80px;
 		margin-top: 0px;
 		margin-left: auto;
 		margin-right: auto;
-		width: 706px;
-		padding-left: 10px; 
+		width: 708px;
+		padding-left: 20px; 
 		z-index: 2;
 		background-color: rgba(255,255,255,1)
 	}
@@ -102,24 +126,23 @@ textarea {
 	}
 
 	.pr-tx {
-		cursor: pointer;
-		padding-top:30px;
-		width:90px;
-		color:rgba(0,0,0, 0.15);
+		padding-top: 30px;
+		width: 90px;
+		color: rgba(0,0,0, 0.15);
 	}
 
 	.pr-tx:hover {
-		color:rgba(0,0,0, 1);
+		color: rgba(0,0,0, 1);
 	}
 
 	button:hover {
-		color:rgba(0,0,0, 1);
+		color: rgba(0,0,0, 1);
 	}
 
 	.pr-status {
 	    font-family: 'unionbold';
 	    text-align: center;
-	    color:rgba(0,0,0,1);
+	    color: rgba(0,0,0,1);
 	    font-size: 12px;
 	    padding-bottom: 10px;
 	    position: fixed;
@@ -135,43 +158,46 @@ textarea {
 		background-position: 0px center;
 		opacity: 0.15;
 	}
+	.pr-linetype:hover {
+		opacity: 1;
+	}
 
 	.pr-dash {
-		background-image:url('lines/l-dash.png');
+		background-image: url('lines/l-dash.png');
 	}
 
-	.pr-dash:hover {
+/*	.pr-dash:hover {
 		opacity: 1;
 	}
-
+*/
 	.pr-wv {
-		background-image:url('lines/l-wave.png');
+		background-image: url('lines/l-wave.png');
 	}
 
-	.pr-wv:hover {
+/*	.pr-wv:hover {
 		opacity: 1;
 	}
-
+*/
 	.pr-dot {
-		background-image:url('lines/l-dot.png');
+		background-image: url('lines/l-dot.png');
 	}
 
-	.pr-dot:hover {
+/*	.pr-dot:hover {
 		opacity: 1;
 	}
-
+*/
 	a {color:rgba(0,0,0, 0.15); cursor:pointer; text-decoration: none;}
-	a:link    {color:rgba(0,0,0, 0.15);}
+	a:link {color:rgba(0,0,0, 0.15);}
 	a:visited {color:rgba(0,0,0, 0.15);}
-	a:hover   {color:rgba(0,0,0, 1);}
-	a:active  {color:rgba(0,0,0, 1);}
+	a:hover {color:rgba(0,0,0, 1);}
+	a:active {color:rgba(0,0,0, 1);}
 
 	.triangleBottomRight{
-     width:0;
-     height:15;
-     border-left:10px solid transparent;
-     border-bottom:10px solid white;
-     overflow: hidden;
+     	width: 0;
+     	height: 15;
+     	border-left: 10px solid transparent;
+     	border-bottom: 10px solid white;
+     	overflow: hidden;
 	}
 
 	.pr-swatch{
@@ -183,32 +209,32 @@ textarea {
 	}
 
 	.riso-blue:hover {
-			background-color: rgba(26,94,171,1);
-		}
+		background-color: rgba(26,94,171,1);
+	}
 
 	.riso-green:hover {
-			background-color: rgba(0,168,93,1);
-		}
+		background-color: rgba(0,168,93,1);
+	}
 
 	.riso-fluopink:hover {
-			background-color: rgba(255,133,200,1);
-		}
+		background-color: rgba(255,133,200,1);
+	}
 
 	.riso-black:hover {
-			background-color: rgba(0,0,0,1);
-		}
+		background-color: rgba(0,0,0,1);
+	}
 
 	.riso-red:hover {
-			background-color: rgba(230,77,97,1);
-		}
+		background-color: rgba(230,77,97,1);
+	}
 
 	.riso-gold:hover {
-			background-color: rgba(180,148,110,1);
-		}
+		background-color: rgba(180,148,110,1);
+	}
 
 	.riso-yellow:hover {
-			background-color: rgba(254,227,0,1);
-		}
+		background-color: rgba(254,227,0,1);
+	}
 
 	.dr-area {
 		width: 100%;
@@ -234,10 +260,35 @@ textarea {
 		overflow: hidden;
 	}
 
+	.input-linetype label.error {
+		float:left;
+		display:inline-block;
+	}
+
+	.input-swatches label.error {
+		float:left;
+		display:inline-block;
+	}
+
+	.input-createdBy label.error {
+		float:left;
+	}
+
+	.input-confirm input{
+		padding-top: 0px;
+		color: rgba(0,0,0, 0.15);
+	}
+
+	.input-confirm input:hover {
+		color: rgba(0,0,0, 1);
+		cursor: pointer;
+	}
+
 </style>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <body>
 
@@ -247,19 +298,21 @@ textarea {
 	<div class="pr">
 		<div class="pr-item">
 					<div class="pr-txinput" style="width:208px;">
-		            <input type="text" maxlength="12" name="createdBy" id="createdBy" value="Your name here"><br>
+		            <div class="input-createdBy"><label for="createdBy"><input type="text" maxlength="12" name="createdBy" id="createdBy" placeholder="Your name"></div>
 					</div>
 		</div>
 		<div class="pr-space">,</div>
-		<div class="pr-item" style="padding-top:20px;">
+		<div class="pr-item" style="padding-top:22px;">
+			        <div class="input-linetype" style="float:left; width:1px;"><label for="linetype"><input name="linetype" id="linetype"></div>
 					<div class="pr-linetype pr-dot"></div>
 					<div class="pr-linetype pr-dash"></div>
 					<div class="pr-linetype pr-wv"></div>
-		            <input type="hidden" name="linetype" id="linetype">
-
 		</div>
+
+
 		<div class="pr-space">,</div>
-		<div class="pr-item" style="padding-top:16px;">
+		<div class="pr-item" style="padding-top:22px;">
+				<div class="input-swatches" style="float:left; width:1px;"><label for="swatch"><input name="swatch" id="swatch"></div>
 				<div class="pr-swatches">
 					<div class="pr-swatch riso-yellow"><div class="triangleBottomRight"></div></div>
 					<div class="pr-swatch riso-fluopink"><div class="triangleBottomRight"></div></div>
@@ -270,27 +323,26 @@ textarea {
 					<div class="pr-swatch riso-red"><div class="triangleBottomRight"></div></div>
 					<div class="pr-swatch riso-blue"><div class="triangleBottomRight"></div></div>
 					<div class="pr-swatch riso-black"><div class="triangleBottomRight"></div></div>
-		            <input type="hidden" name="swatch" id="swatch">
 				</div>
-
 		</div>
+
 		<div class="pr-space">,</div>
 		<div class="pr-item">
 					<div class="pr-txinput number" style="width:46px;">
 		            <div class="pr-space" style="width: 46px; position:absolute; padding-top:4px; font-size: 22px; text-align: right; pointer-events:none;">&deg;</div>
-		            <input type="text" maxlength="3" name="angle" id="angle">
+		            <div class="input-angle"><label for="angle"><input type="text" maxlength="3" name="angle" id="angle"></div>
 					</div>
 		</div>
 		<div class="pr-space">,</div>
 		<div class="pr-item">
 					<div class="pr-txinput number" style="width:40px;">
 		            <div class="pr-space" style="position:absolute; padding-top:10px; font-size: 18px; text-align: left; pointer-events:none;">&times;</div>
-		            <input type="text" maxlength="2" name="times" id="times" style="text-align: right"><br>
+		            <div class="input-times"><label for="times"><input type="text" maxlength="2" name="times" id="times" style="text-align: right"></div>
 					</div>
 		</div>
 		<div class="pr-item">
 					<div class="pr-space" style="padding-left: 2px; text-align:left; width:0px;">.</div>
-					<div class="pr-space pr-tx confirm"><a href="javascript:" onclick="document.getElementById('layer').submit(); return false;">Draw.</a></div>
+					<div class="pr-space pr-tx input-confirm" style="padding-top:28px;"><input type="submit" value="Draw."></div>
 		</div>
 	</div>
 		<div class="pr-status">
@@ -300,6 +352,32 @@ textarea {
 	</div>
 </div>
 </form>
+		<script>
+				$.validator.setDefaults({
+				submitHandler: function(form) {
+			    form.submit();
+			  }
+			});
+
+			$().ready(function() {
+				$("#layer").validate({
+					rules: {
+						createdBy: "required",
+						linetype: "required",
+						swatch: "required",
+						angle: "required",
+						times: "required"
+					},
+					messages: {
+						createdBy: "Who's there?",
+						linetype: "Style?",
+						swatch: "Color?",
+						angle: "Angle?",
+						times: "Repeat?"
+					}
+					});
+			});
+		</script>
 
 		<div class="dr-area">
 		        <% layers.slice(layers.length - layers.length%6).forEach(function(layer) { %>
@@ -312,46 +390,8 @@ textarea {
 				<% }); %>
 		</div>
 
+
 <script type="text/javascript">
-
-(function($,W,D)
-{
-    var JQUERY4U = {};
-
-    JQUERY4U.UTIL =
-    {
-        setupFormValidation: function()
-        {
-            //form validation rules
-            $("#layer").validate({
-                rules: {
-                    createdBy: "required",                                        
-                    linetype: "required",
-                    swatch: "required",
-                    times: "required",
-                    angle: "required"
-                },
-                messages: {
-                    createdBy: "What's your name?",
-                    linetype: "Choose your stroke style!",
-                    swatch: "And what color?",
-                    times: "Number of repeats?",
-                    angle: "And at what angle?"
-                },
-                submitHandler: function(form) {
-                    form.submit();
-                }
-            });
-        }
-    }
-
-    //when the dom has loaded setup form validation rules
-    $(D).ready(function($) {
-        JQUERY4U.UTIL.setupFormValidation();
-    });
-
-})(jQuery, window, document);
-
 
 		$(".confirm").on("click", function() { 
 		    $(".confirm").css("color", "rgba(0,0,0,1)");
