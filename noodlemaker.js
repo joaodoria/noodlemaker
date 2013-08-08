@@ -12,7 +12,7 @@ var dashed = '%3Csvg%20version%3D%221.1%22%20id%3D%22dash%22%20xmlns%3D%22http%3
 var dotted = '%3Csvg%20version%3D%221.1%22%20id%3D%22dot%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2246px%22%20height%3D%2228px%22%20viewBox%3D%220%200%2046%2028%22%20enable-background%3D%22new%200%200%2046%2028%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20id%3D%22shape-dot%22%20d%3D%22M0%2C14c0-2.754%2C2.245-5%2C5-5l0%2C0c2.772%2C0%2C5%2C2.245%2C5%2C5l0%2C0c0%2C2.772-2.228%2C5-5%2C5l0%2C0C2.245%2C19%2C0%2C16.772%2C0%2C14z%22'
 
 // Read our template from the disk
-var template = fs.readFileSync(__dirname + '/views/cms-7.html', 'utf8');
+var template = fs.readFileSync(__dirname + '/views/noodlemaker.html', 'utf8');
 console.log('Loaded template: ' + template);
 
 // Make an empty array of layer
