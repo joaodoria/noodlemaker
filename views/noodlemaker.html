@@ -67,7 +67,7 @@ textarea {
 		margin-top: 0px;
 		margin-left: auto;
 		margin-right: auto;
-		width: 734px;
+		width: 706px;
 		padding-left: 10px; 
 		z-index: 2;
 		background-color: rgba(255,255,255,1)
@@ -288,7 +288,7 @@ textarea {
 					</div>
 		</div>
 		<div class="pr-item">
-					<div class="pr-space" style="padding-left: 2px; text-align:left; width:18px;">.</div>
+					<div class="pr-space" style="padding-left: 2px; text-align:left; width:0px;">.</div>
 					<div class="pr-space pr-tx confirm"><a href="javascript:" onclick="document.getElementById('layer').submit(); return false;">Draw.</a></div>
 		</div>
 	</div>
@@ -311,7 +311,46 @@ textarea {
 				<% }); %>
 		</div>
 
-<script>
+<script type="text/javascript">
+
+(function($,W,D)
+{
+    var JQUERY4U = {};
+
+    JQUERY4U.UTIL =
+    {
+        setupFormValidation: function()
+        {
+            //form validation rules
+            $("#register-form").validate({
+                rules: {
+                    createdBy: "required",                                        
+                    linetype: "required",
+                    swatch: "required",
+                    times: "required",
+                    angle: "required"
+                },
+                messages: {
+                    createdBy: "What's your name?",
+                    linetype: "Choose your stroke style!",
+                    swatch: "And what color?",
+                    times: "Number of repeats?",
+                    angle: "And at what angle?"
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+        }
+    }
+
+    //when the dom has loaded setup form validation rules
+    $(D).ready(function($) {
+        JQUERY4U.UTIL.setupFormValidation();
+    });
+
+})(jQuery, window, document);
+
 
 		$(".confirm").on("click", function() { 
 		    $(".confirm").css("color", "rgba(0,0,0,1)");
