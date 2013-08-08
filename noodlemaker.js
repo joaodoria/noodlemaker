@@ -76,5 +76,4 @@ server.use(function(serverRequest, serverResponse) {
 
 // Begin listening for requests on port 4000
 console.log('Listening');
-console.log(layers.length %6);
 server.listen(4000);
