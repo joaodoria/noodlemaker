@@ -353,7 +353,7 @@ textarea {
 		</script>
 
 		<div class="dr-area">
-		        <% layers.slice(layers.length - layers.length%6).forEach(function(layer) { %>
+		        <% layers.slice(layers.length - (layers.length%6 || 6)).forEach.forEach(function(layer) { %>
 				<div class="dr-container" style="-webkit-transform: rotate(<%= layer.angle %>deg);">
 					    	<% for (j = 1; j <= layer.times; j++) { %>
 					    		<div class="dr-box" style="	height: <%= 100 / layer.times %>%;
